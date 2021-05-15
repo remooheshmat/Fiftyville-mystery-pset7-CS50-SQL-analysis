@@ -19,7 +19,7 @@ WITH suspected_atm AS (
       JOIN people p
       ON ba.person_id = p.id
       WHERE ats.atm_location LIKE 'Fifer Street' AND ats.transaction_type = 'withdraw' AND year = 2020 AND month = 7 AND day = 28),
--- getting the data from calls
+-- Getting the data from calls
 suspected_phone_numbers AS (
      SELECT phc.caller AS caller, phc.receiver AS receiver
      FROM phone_calls phc
@@ -47,15 +47,7 @@ ORDER BY f.hour, f.minute
 LIMIT 1;
 
 
--- getting the name of the accomplice
+-- Getting the name of the accomplice
 SELECT name AS Accomplice
 FROM people
 WHERE phone_number = "(375) 555-8161";
-
-
-
-
-
-
-
-
