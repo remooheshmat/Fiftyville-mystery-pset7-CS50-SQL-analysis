@@ -46,7 +46,6 @@ WHERE year = 2020 AND month = 7 AND day = 29
 ORDER BY f.hour, f.minute
 LIMIT 1;
 
-
 -- Getting the name of the accomplice
 SELECT name AS Accomplice
 FROM people
