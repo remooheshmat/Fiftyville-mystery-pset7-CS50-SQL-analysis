@@ -28,10 +28,11 @@ suspected_phone_numbers AS (
      WHERE year = 2020 AND month = 7 AND day = 28 AND phc.duration < 60),
 
 -- GETTING the suspected theif and passport and phone number of his accomplice
-caller_passport_receiver AS (SELECT p.name AS caller_name, p.passport_number AS passport_number, spn.receiver AS receiver
-FROM people p
-JOIN suspected_phone_numbers spn
-ON p.phone_number = spn.caller)
+caller_passport_receiver AS (
+     SELECT p.name AS caller_name, p.passport_number AS passport_number, spn.receiver AS receiver
+     FROM people p
+     JOIN suspected_phone_numbers spn
+     ON p.phone_number = spn.caller)
 
 -- Getting Thief name, passport_number, destination city, and the accomplice phone_number
 SELECT caller_name AS thief, receiver AS accomplice_phone_number, ap.city AS destination_city
